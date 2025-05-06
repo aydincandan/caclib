@@ -1,6 +1,6 @@
 {
   "name": "caclib",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "My dual module library : https://chatgpt.com/share/68124b0c-5ea0-8011-8476-a13d1120ad41",
   "main": "./cevapbekle/cjs/index.cjs",
   "exports": {
@@ -13,12 +13,20 @@
     },
     "./cevapbekle/esm": {
       "import": "./cevapbekle/esm/indexESM.js"
+    },
+    "./zgraupner": {
+      "require": "./zgraupner/cjs/index.cjs",
+      "import": "./zgraupner/esm/indexESM.js"
+    },
+    "./nextanother": {
+      "require": "./nextanother/cjs/index.cjs",
+      "import": "./nextanother/esm/indexESM.js"
     }
   },
   "files": [
     "cevapbekle",
-    "cjs",
-    "esm",
+    "zgraupner",
+    "nextanother",
     "README.md"
   ],
   "keywords": ["library", "dual", "esm", "commonjs"],
