@@ -1,0 +1,21 @@
+{
+  "name": "caclib",
+  "version": "1.0.0",
+  "description": "ikiside kullanılabiliyor ikiside birbirine denk.",
+
+  "main": "indexESM.js",
+  "type": "module",
+  
+  "mainCJS": "index.cjs",
+  "typeCJS": "commonjs",
+  
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "readline": "^1.3.0"
+  }
+}
