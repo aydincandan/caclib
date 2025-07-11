@@ -1,6 +1,6 @@
 {
   "name": "caclib",
-  "version": "1.1.2",
+  "version": "1.1.5",
   "description": "My dual module library : https://chatgpt.com/share/68124b0c-5ea0-8011-8476-a13d1120ad41",
   "main": "./cevapbekle/cjs/index.cjs",
   "exports": {
@@ -8,16 +8,19 @@
       "require": "./cevapbekle/cjs/index.cjs",
       "import": "./cevapbekle/esm/indexESM.js"
     },
-    "./cevapbekle/cjs": {
-      "require": "./cevapbekle/cjs/index.cjs"
-    },
-    "./cevapbekle/esm": {
-      "import": "./cevapbekle/esm/indexESM.js"
-    },
+    "./cevapbekle/cjs": { "require": "./cevapbekle/cjs/index.cjs" },
+    "./cevapbekle/esm": { "import": "./cevapbekle/esm/indexESM.js" },
     "./zgraupner": {
       "require": "./zgraupner/cjs/index.cjs",
       "import": "./zgraupner/esm/indexESM.js"
     },
+
+    "./mostused/cjs": { "require": "./mostused/cjs/index.cjs" },
+    "./mostused/esm": { "import": "./mostused/esm/indexESM.js" },
+    
+    "./mostused2": {    "require": "./mostused/cjs/index.cjs",    
+                        "import": "./mostused/esm/indexESM.js" },
+    
     "./nextanother": {
       "require": "./nextanother/cjs/index.cjs",
       "import": "./nextanother/esm/indexESM.js"
@@ -26,6 +29,8 @@
   "files": [
     "cevapbekle",
     "zgraupner",
+    "mostused",
+    "mostused2",
     "nextanother",
     "README.md"
   ],
