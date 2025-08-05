@@ -15,4 +15,33 @@ const renkler = {
 };
 
 
-module.exports = { URLisAfile, renkler }
+// --------- src/lib/trimHelpers.cjs ---------
+// ref : https://chatgpt.com/share/6859a4bc-75b4-8011-838a-801cb993e721
+
+function trimStartChar(str, char) {
+  const escaped = escapeRegExp(char);
+  const regex = new RegExp(`^(${escaped})+`);
+  return str.replace(regex, '');
+}
+
+function trimEndChar(str, char) {
+  const escaped = escapeRegExp(char);
+  const regex = new RegExp(`(${escaped})+$`);
+  return str.replace(regex, '');
+}
+
+function trimChar(str, char) {
+  const escaped = escapeRegExp(char);
+  const regex = new RegExp(`^(${escaped})+|(${escaped})+$`, 'g');
+  return str.replace(regex, '');
+}
+
+function escapeRegExp(str) {
+  return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+// --------- src/lib/trimHelpers.cjs ---------
+
+
+module.exports = { URLisAfile, renkler, trimStartChar,
+  trimEndChar,
+  trimChar }
