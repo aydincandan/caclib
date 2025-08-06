@@ -1,12 +1,16 @@
 {
   "name": "caclib",
-  "version": "1.1.6",
+  "version": "1.1.7",
   "description": "My dual module library : https://chatgpt.com/share/68124b0c-5ea0-8011-8476-a13d1120ad41",
   "main": "./cevapbekle/cjs/index.cjs",
   "exports": {
     ".": {
       "require": "./mostused/cjs/index.cjs",
       "import": "./mostused/esm/indexESM.js"
+    },
+    "./mostused/argshelperv3": {
+      "require": "./mostused/cjs/argsHelperV3.cjs",
+      "import": "./mostused/esm/argsHelperV3.js"
     },
     "./cevapbekle/cjs": {
       "require": "./cevapbekle/cjs/index.cjs"
@@ -53,6 +57,7 @@
     "readline": "^1.3.0"
   },
   "devDependencies": {
-    "@types/node": "^24.2.0"
+    "@types/node": "^24.2.0",
+    "typescript": "^5.9.2"
   }
 }
