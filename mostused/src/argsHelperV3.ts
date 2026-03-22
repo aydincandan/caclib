@@ -38,26 +38,42 @@ export function getArgsWithNoDefaults(optionsOrArray: GetArgsOptions | string[] 
     process.exit(0);
   }
 
-  // Argümanları ayrıştır
+  // Argümanları ayıkla v4 : https://chatgpt.com/share/69bfbaff-eaa8-8011-96f4-e0211835ea6c
   for (let i = 0; i < rawArgs.length; i++) {
-    const arg = rawArgs[i];
+    let arg = rawArgs[i];
 
     if (arg.startsWith('--')) {
-      const [key, value = "true"] = arg.slice(2).split('=');
-      namedArgs[key] = value;
+      let key = arg.slice(2);
+      let value = "true";
+
+      // --key=value
+      if (key.includes('=')) {
+        [key, value] = key.split('=');
+      } 
+      // --key = value
+      else if (rawArgs[i + 1] === '=') {
+        value = rawArgs[i + 2] || "true";
+        i += 2;
+      }
+
+      namedArgs[key] = value.trim();
+
     } else if (arg.startsWith('-')) {
       const key = arg.slice(1);
       const next = rawArgs[i + 1];
+
       if (next && !next.startsWith('-')) {
         namedArgs[key] = next;
         i++;
       } else {
         namedArgs[key] = true;
       }
+
     } else {
       positionalArgs.push(arg);
     }
   }
+  // Argümanları ayıkla v4 : https://chatgpt.com/share/69bfbaff-eaa8-8011-96f4-e0211835ea6c
 
   // // Hata kontrolü: çok fazla pozisyonel argüman varsa uyar
   // if (positionalArgs.length > defaults.length) {
