@@ -2,6 +2,7 @@ export interface GetArgsOptions {
     defaults?: string[];
     helpText?: string;
 }
+
 export interface ParsedArgs {
     positional: string[];
     named: Record<string, string | boolean>;

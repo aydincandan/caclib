@@ -1,7 +1,7 @@
 {
   "name": "caclib",
-  "version": "1.1.7",
-  "description": "My dual module library : https://chatgpt.com/share/68124b0c-5ea0-8011-8476-a13d1120ad41",
+  "version": "1.1.10",
+  "description": "EN GUNCELI mostused/esm/argsHelperV4.js                 My Dual Module Library : https://chatgpt.com/share/68124b0c-5ea0-8011-8476-a13d1120ad41",
   "main": "./cevapbekle/cjs/index.cjs",
     "scripts": {
     "update-outdated-packages": "npx npm-check-updates -u && npm install"
@@ -61,6 +61,6 @@
   },
   "devDependencies": {
     "@types/node": "^25.5.0",
-    "typescript": "^5.9.3"
+    "typescript": "^6.0.2"
   }
 }
