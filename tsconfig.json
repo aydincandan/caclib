@@ -10,5 +10,5 @@
     "esModuleInterop": true,
     "allowJs": true
   },
-  "include": ["mostused/src/**/*.ts"]
+  "include": ["argshellper/src/**/*.ts"]
 }

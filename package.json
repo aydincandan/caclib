@@ -1,39 +1,37 @@
 {
   "name": "caclib",
-  "version": "1.1.10",
-  "description": "EN GUNCELI mostused/esm/argsHelperV4.js                 My Dual Module Library : https://chatgpt.com/share/68124b0c-5ea0-8011-8476-a13d1120ad41",
+  "version": "1.1.11",
+  "description": "kullanımlar :  caclib | ( /hellpers , /argshellper , /cevapbekle , /zgraupner , /nextanother )        My Dual Module Library : https://chatgpt.com/share/68124b0c-5ea0-8011-8476-a13d1120ad41",
   "main": "./cevapbekle/cjs/index.cjs",
-    "scripts": {
-    "update-outdated-packages": "npx npm-check-updates -u && npm install"
+  "scripts": {
+    "update-outdated-packages": "npx npm-check-updates -u && npm install",
+    "build:types": "tsc -p tsconfig.build.json",
+    "build:copy": "node ./scripts/copy.mjs",
+    "build-": "npm run build:types && npm run build:copy",
+    "build": "npm run build:types && node scripts/fix-types.mjs && npm run build:copy"
   },
   "exports": {
     ".": {
-      "require": "./mostused/cjs/index.cjs",
-      "import": "./mostused/esm/indexESM.js"
+      "types": "./dist/hellpers/index.d.ts",
+      "require": "./hellpers/cjs/index.cjs",
+      "import": "./hellpers/esm/index.js"
     },
-    "./mostused/argshelperv3": {
-      "require": "./mostused/cjs/argsHelperV3.cjs",
-      "import": "./mostused/esm/argsHelperV3.js"
+    "./hellpers": {
+      "types": "./dist/argshellper/index.d.ts",
+      "require": "./hellpers/cjs/index.cjs",
+      "import": "./hellpers/esm/index.js"
     },
-    "./cevapbekle/cjs": {
-      "require": "./cevapbekle/cjs/index.cjs"
+    "./argshellper": {
+      "require": "./argshellper/cjs/argsHelperV3.cjs",
+      "import": "./argshellper/esm/argsHelperV4.js"
     },
-    "./cevapbekle/esm": {
+    "./cevapbekle": {
+      "require": "./cevapbekle/cjs/index.cjs",
       "import": "./cevapbekle/esm/indexESM.js"
     },
     "./zgraupner": {
       "require": "./zgraupner/cjs/index.cjs",
       "import": "./zgraupner/esm/indexESM.js"
-    },
-    "./mostused/cjs": {
-      "require": "./mostused/cjs/index.cjs"
-    },
-    "./mostused/esm": {
-      "import": "./mostused/esm/indexESM.js"
-    },
-    "./mostused2": {
-      "require": "./mostused/cjs/index.cjs",
-      "import": "./mostused/esm/indexESM.js"
     },
     "./nextanother": {
       "require": "./nextanother/cjs/index.cjs",
@@ -43,8 +41,8 @@
   "files": [
     "cevapbekle",
     "zgraupner",
-    "mostused",
-    "mostused2",
+    "argshellper",
+    "hellpers",
     "nextanother",
     "README.md"
   ],
@@ -54,8 +52,8 @@
     "esm",
     "commonjs"
   ],
-  "author": "aydincandan@gmail.com",
   "license": "ISC",
+  "author": "Aydin Candan <aydincandan@gmail.com>",
   "dependencies": {
     "readline": "^1.3.0"
   },
